@@ -1,0 +1,72 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="global_declaration" id="1" inline="false" x="-4" y="-572">
+    <field name="NAME">serial</field>
+    <value name="VALUE">
+      <block type="text" id="2">
+        <field name="TEXT">0000000000000000</field>
+      </block>
+    </value>
+  </block>
+  <block type="component_event" id="3" x="-2" y="-535">
+    <mutation component_type="Form" instance_name="Kozle_Control" event_name="Initialize"></mutation>
+    <field name="COMPONENT_SELECTOR">Kozle_Control</field>
+    <statement name="DO">
+      <block type="lexical_variable_set" id="4" inline="false">
+        <field name="VAR">global serial</field>
+        <value name="VALUE">
+          <block type="component_method" id="5" inline="false">
+            <mutation component_type="TinyDB" method_name="GetValue" is_generic="false" instance_name="TinyDB1"></mutation>
+            <field name="COMPONENT_SELECTOR">TinyDB1</field>
+            <value name="ARG0">
+              <block type="text" id="6">
+                <field name="TEXT">serial</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="text" id="7">
+                <field name="TEXT">0000000000000000</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_set_get" id="8" inline="false">
+            <mutation component_type="WebViewer" set_or_get="set" property_name="HomeUrl" is_generic="false" instance_name="webKozle_Kontrol"></mutation>
+            <field name="COMPONENT_SELECTOR">webKozle_Kontrol</field>
+            <field name="PROP">HomeUrl</field>
+            <value name="VALUE">
+              <block type="text_join" id="9" inline="false">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="10">
+                    <field name="TEXT">http://ris.mk/hauser/hauser.php?ser=</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="lexical_variable_get" id="11">
+                    <field name="VAR">global serial</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="12" x="-4" y="-352">
+    <mutation component_type="Button" instance_name="btnHome" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">btnHome</field>
+    <statement name="DO">
+      <block type="controls_closeScreen" id="13"></block>
+    </statement>
+  </block>
+  <block type="controls_openAnotherScreen" id="14" inline="false" disabled="true" x="31" y="-268">
+    <value name="SCREEN">
+      <block type="text" id="15">
+        <field name="TEXT">Screen1</field>
+      </block>
+    </value>
+  </block>
+  <yacodeblocks ya-version="159" language-version="20"></yacodeblocks>
+</xml>
