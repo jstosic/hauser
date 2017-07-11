@@ -1,0 +1,2 @@
+# hauser
+Home Automation Server
